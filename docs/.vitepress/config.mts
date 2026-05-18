@@ -7,34 +7,34 @@ export default defineConfig({
     ['meta', { charset: 'utf-8' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     ['meta', { name: 'theme-color', content: '#3c3c3c' }],
-    
+
     // SEO Meta Tags
     ['meta', { name: 'keywords', content: 'InstallerX, Android installer, APK installer, XAPK, APKS, package manager, app installation' }],
     ['meta', { name: 'author', content: 'iamr0s & InstallerX Revived Contributors' }],
     ['meta', { name: 'robots', content: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:url', content: 'https://wxxsfxyzm.github.io/InstallerX-Revived/' }],
+    ['meta', { property: 'og:url', content: 'https://wxxsfxyzm.github.io/InstallerX-Revived-Website/' }],
     ['meta', { property: 'og:title', content: 'InstallerX Revived - Modern Android Package Installer' }],
     ['meta', { property: 'og:description', content: 'Universal Android APK installer with advanced features, Material 3 design, and Shizuku support' }],
-    ['meta', { property: 'og:image', content: 'https://wxxsfxyzm.github.io/InstallerX-Revived/ic_launcher.svg' }],
+    ['meta', { property: 'og:image', content: 'https://wxxsfxyzm.github.io/InstallerX-Revived-Website/ic_launcher.svg' }],
     ['meta', { property: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { property: 'twitter:url', content: 'https://wxxsfxyzm.github.io/InstallerX-Revived/' }],
+    ['meta', { property: 'twitter:url', content: 'https://wxxsfxyzm.github.io/InstallerX-Revived-Website/' }],
     ['meta', { property: 'twitter:title', content: 'InstallerX Revived' }],
     ['meta', { property: 'twitter:description', content: 'Universal Android APK installer with advanced features' }],
-    ['meta', { property: 'twitter:image', content: 'https://wxxsfxyzm.github.io/InstallerX-Revived/ic_launcher.svg' }],
-    
+    ['meta', { property: 'twitter:image', content: 'https://wxxsfxyzm.github.io/InstallerX-Revived-Website/ic_launcher.svg' }],
+
     // Canonical URL
-    ['link', { rel: 'canonical', href: 'https://wxxsfxyzm.github.io/InstallerX-Revived/' }],
-    
+    ['link', { rel: 'canonical', href: 'https://wxxsfxyzm.github.io/InstallerX-Revived-Website/' }],
+
     // Preconnect to external resources
     ['link', { rel: 'preconnect', href: 'https://github.com' }],
     ['link', { rel: 'dns-prefetch', href: 'https://github.com' }],
-    
+
     // Icon
-    ['link', { rel: 'icon', href: '/InstallerX-Revived/ic_launcher.svg' }],
-    ['link', { rel: 'shortcut icon', href: '/InstallerX-Revived/ic_launcher.svg' }],
-    ['link', { rel: 'apple-touch-icon', href: '/InstallerX-Revived/ic_launcher.svg' }],
-    
+    ['link', { rel: 'icon', href: '/InstallerX-Revived-Website/ic_launcher.svg' }],
+    ['link', { rel: 'shortcut icon', href: '/InstallerX-Revived-Website/ic_launcher.svg' }],
+    ['link', { rel: 'apple-touch-icon', href: '/InstallerX-Revived-Website/ic_launcher.svg' }],
+
     // JSON-LD Structured Data
     ['script', { type: 'application/ld+json' }, JSON.stringify({
       '@context': 'https://schema.org',
@@ -43,23 +43,23 @@ export default defineConfig({
       'description': 'A modern, feature-rich Android package installer with universal compatibility',
       'applicationCategory': 'UtilitiesApplication',
       'operatingSystem': 'Android',
-      'url': 'https://wxxsfxyzm.github.io/InstallerX-Revived/',
-      'image': 'https://wxxsfxyzm.github.io/InstallerX-Revived/ic_launcher.svg',
+      'url': 'https://wxxsfxyzm.github.io/InstallerX-Revived-Website/',
+      'image': 'https://wxxsfxyzm.github.io/InstallerX-Revived-Website/ic_launcher.svg',
       'author': {
         '@type': 'Organization',
         'name': 'InstallerX Revived Contributors'
       }
     })],
-    
+
     // Sitemap and RSS feed links
-    ['link', { rel: 'sitemap', href: '/InstallerX-Revived/sitemap.xml' }]
+    ['link', { rel: 'sitemap', href: '/InstallerX-Revived-Website/sitemap.xml' }]
   ],
-  base: '/InstallerX-Revived/',
+  base: '/InstallerX-Revived-Website/',
   title: "InstallerX Revived",
   description: "Universal Android APK installer supporting APK, APKS, APKM, XAPK formats. Features Material 3 design, Shizuku support, and advanced installation options.",
 
   sitemap: {
-    hostname: 'https://wxxsfxyzm.github.io/InstallerX-Revived/',
+    hostname: 'https://wxxsfxyzm.github.io/InstallerX-Revived-Website/',
     lastmodDateOnly: false
   },
 
@@ -161,7 +161,7 @@ export default defineConfig({
           next: 'Next Page'
         },
         editLink: {
-          pattern: 'https://github.com/wxxsfxyzm/InstallerX-Revived/edit/main/website/docs/:path',
+          pattern: 'https://github.com/wxxsfxyzm/InstallerX-Revived-Website/edit/main/docs/:path',
           text: 'Edit this page on GitHub'
         }
       }
@@ -240,7 +240,7 @@ export default defineConfig({
         darkModeSwitchLabel: '主题',
 
         editLink: {
-          pattern: 'https://github.com/wxxsfxyzm/InstallerX-Revived/edit/main/website/docs/:path',
+          pattern: 'https://github.com/wxxsfxyzm/InstallerX-Revived-Website/edit/main/docs/:path',
           text: '在 GitHub 上编辑此页'
         }
       }
