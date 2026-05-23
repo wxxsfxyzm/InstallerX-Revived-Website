@@ -48,7 +48,7 @@ General guidance:
 * **China-region OPPO / OnePlus / ColorOS:** the AOSP build usually matches.
 * **Global ROMs / Google devices:** the Google build usually matches.
 
-::: warning
+::: danger
 This is only a reference for common setups, not a guarantee for every OEM. Before flashing, packaging, or preinstalling it, verify that your system package manager package name, mount path, and privileged permission files match exactly. A mismatch can cause boot issues.
 :::
 

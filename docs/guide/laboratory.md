@@ -13,7 +13,7 @@ Enable **Module Flashing** to let InstallerX install supported Magisk, KernelSU,
 
 After enabling it, InstallerX can open a ZIP as either an app container or a module when both are detected. Module installation is the main area where InstallerX may use module-specific command execution instead of pure PackageInstaller APIs.
 
-::: warning
+::: danger
 Always verify the module before flashing. A bad module can bootloop or break system components.
 :::
 

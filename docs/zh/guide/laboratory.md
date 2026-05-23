@@ -13,7 +13,7 @@ description: 了解 InstallerX Revived 的实验性功能和风险选项
 
 当 ZIP 同时包含应用安装包和模块信息时，InstallerX 会让你选择作为应用安装还是作为模块安装。模块安装是 InstallerX 少数可能使用模块专用命令执行的场景，不完全等同于普通 PackageInstaller 安装。
 
-::: warning
+::: danger
 刷写前请确认模块来源可靠。错误模块可能导致系统组件异常或无法正常开机。
 :::
 

@@ -7,7 +7,7 @@ description: 了解 InstallerX Revived 可配置的 Android 安装标志位
 
 安装选项是传递给 Android PackageInstaller 的高级标志位。它们可以保存在配置文件中，也可以在安装对话框的扩展菜单里临时修改。对应的 AOSP 常量主要定义在 [`PackageManager.java`][aosp-pm]，会通过 `PackageInstaller.SessionParams` 进入系统安装会话。
 
-::: warning
+::: info
 安装标志位只是向系统发出请求，并不保证一定生效。Android 版本、ROM 策略、授权器，以及 InstallerX 是否为系统包管理器，都会影响最终结果。
 :::
 
@@ -62,7 +62,7 @@ description: 了解 InstallerX Revived 可配置的 Android 安装标志位
 
 这两个选项默认关闭。关闭时，如果命中对应风险，InstallerX 会在安装到达系统前阻止本次请求，并显示配置阻止类错误；调用方会收到标准安装失败结果。失败对话框中的建议按钮可以临时允许本次安装一次。
 
-::: warning
+::: danger
 这些选项主要用于已经使用 Core Patch 等框架能力的特殊环境。没有 Core Patch 时，系统通常已经会拒绝这类安装；开启后则等于允许绕过正常更新安全检查，请只对可信来源配置。
 :::
 

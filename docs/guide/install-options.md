@@ -7,7 +7,7 @@ description: Customize installation parameters and options for advanced control 
 
 Install options are advanced flags passed to Android PackageInstaller. They can be saved in a profile or changed temporarily from the install dialog extended menu. The matching AOSP constants are mostly defined in [`PackageManager.java`][aosp-pm] and are applied through `PackageInstaller.SessionParams`.
 
-::: warning
+::: info
 Install flags are requests to the system, not guarantees. Android version, ROM policy, authorizer, and whether InstallerX is a system package manager all affect the final result.
 :::
 
@@ -62,7 +62,7 @@ To prevent that, each profile has two policy gates:
 
 Both options are off by default. When disabled and the matching risk is detected, InstallerX blocks the request before it reaches the system, shows a profile-blocked install failure, and reports a standard install failure to the calling app. The failure dialog can show a suggestion chip for a one-time bypass.
 
-::: warning
+::: danger
 These options are mainly for special environments using Core Patch or similar framework-level changes. Without Core Patch, the system usually rejects these installs already. Enabling them allows bypassing normal update safety checks, so use them only for trusted sources.
 :::
 

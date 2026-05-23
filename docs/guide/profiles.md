@@ -24,7 +24,7 @@ The authorizer is the privilege backend used to install apps and perform privile
 * **None:** Fully limited by the system. In system installer mode it can install silently; as a normal user app it uses a system install session and relies on user confirmation.
 * **Custom:** Run a custom command for advanced environments.
 
-::: tip System package manager mode
+::: info System package manager mode
 When InstallerX is installed as a system package manager, many profile options are handled by the system and may not behave like Shizuku or Root mode.
 :::
 
