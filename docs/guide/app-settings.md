@@ -13,15 +13,15 @@ Customize the look and feel of the app.
 
 ### UI Engine
 InstallerX Revived offers two UI engines for you to choose from:
-*   **Material Design 3 (MD3)**: Google's latest design language, providing a modern and dynamic interface experience. By default, it uses the Material 3 Expressive style. If you don't like it, you can revert to the standard MD3 style in the theme settings.
-*   **MIUIX**: The design style of Xiaomi's HyperOS, offering a different visual and interactive feel. Please note that the [MIUIX library](https://github.com/compose-miuix-ui/miuix) is under active development and optimization. The UI may change at any time, and you are welcome to provide feedback to me on any issues you encounter.
+*   **Google Material 3**: A modern Android UI based on Material 3 Expressive.
+*   **Miuix**: A HyperOS-like UI style with optional custom colors where supported.
 
 ### Dynamic Theming
-The app supports dynamic theming, which works on all Android versions. It extracts colors from your wallpaper and applies them throughout the app's interface, creating a visually harmonious effect that matches your system.
+The app supports dynamic theming and manual theme colors. You can also enable blur effects, a floating bottom bar, and predictive back animations.
 
 You can further customize color behaviors:
 *   **Colorful Dialog**: When enabled, the installation dialog will extract colors from the icon of the app being installed, making each installation interface unique.
-*   **Colorful Live Notification Progress**: On Android 16 and newer, this option allows the installation progress bar in live notifications to also follow the app icon's color. Please note that you must first enable the "Live Notification" feature for the app to configure this option.
+*   **Colorful Live Notification Progress**: When live notifications are enabled, the progress indicator can also follow the package icon color.
 
 ### Icon Preference
 You can choose the source for the icons displayed in the installation dialog:
@@ -29,30 +29,47 @@ You can choose the source for the icons displayed in the installation dialog:
 *   **Use System Icon Pack**: If you have a third-party icon pack installed, you can select this option to make the icons in the app list consistent with your system icons. This is tested working on HyperOS and OneUI.
 
 ### Hide App Icon
-You can choose to hide InstallerX's launcher icon. Please note that due to system limitations on Android 10+, apps are no longer allowed to hide their desktop icons on Android 10 and above. Therefore, on some systems, after hiding the icon, an icon pointing to the system setting's app details page may still appear on the desktop or in the app drawer. You can disable this restriction in LSPosed's settings. 
+You can hide InstallerX's launcher icon and open settings with the dial code `*#*#46789#*#*`. You can also add InstallerX's Quick Settings tile and open settings directly from the system quick toggles.
+
+If InstallerX was installed through a module, you can also launch settings from the KernelSU action entry. Confirm that you can access settings before hiding the icon. On Android 10+, some systems may still show a placeholder icon that opens the app details page.
 
 ---
 
-## Installation Options
+## Basic Settings
 
-Configure global installation behaviors and parameters.
+The Settings tab also contains basic system-level toggles:
 
-### Global Authorizer
-The authorizer set here (e.g., Root or Shizuku) will be used by the app to perform global operations that require privileges, such as locking the default installer, modifying ADB verification settings, etc. User profiles can also inherit this setting to perform installations.
+* **Disable ADB Verify:** Disable install scanning on some systems, such as Play Protect checks triggered during installation. This is unavailable with Dhizuku or no-privilege mode.
+* **Ignore Battery Optimizations:** Helps on ROMs with strict background policies when notification installs appear stuck.
 
-### Global Installation Method
-Here, you can select a global default installation method (e.g., Root, Shizuku), which can be inherited by profiles. You can also customize the UI behavior during the installation process.
+## Installer Global Settings
 
-#### Explanation of Custom Settings
-*   **Custom Install Confirmation Dialog**: When enabled, uses the app's built-in dialog instead of the system's default installation confirmation dialog.
-*   **Show Toast on Completion**: Displays a brief message at the bottom of the screen after an installation succeeds or fails.
-*   **Open App After Installation**: Provides a shortcut button to immediately open the newly installed app upon successful installation.
+Installer settings collect global behavior for the installation flow. The current groups are:
+
+* **Dialog Settings:** Control the extended menu, smart suggestions, whether dismissing the dialog cancels installation, automatic background install, long-press background install, and tapping the app icon to share the package. In the Miuix UI, this page also controls whether the install file path and install initiator are shown.
+* **Notification Settings:** Choose Standard Notification, Live Activity, or Xiaomi Super Island for install progress. Super Island options include bypass restriction, XMSF blocking interval, and outer glow. Notification preferences also include showing the dialog when tapping a notification and auto-clearing success notifications.
+* **Authorizer Tweaks:** Fine-tune authorizer-specific behavior. In system installer mode, InstallerX can always use root for privileged tasks such as module flashing or file deletion. In user app mode, it can try installing without user action and adjust the close-session countdown.
+* **Biometric Authentication:** Disable, always require, or follow profile settings when device authentication is available.
+* **Install Requester:** When enabled, profiles expose OriginatingUid/requester customization.
+
+## Xposed Detection
+
+InstallerX can detect Xposed modules and show related module information. When **Quick Open LSPosed** is enabled, the install result screen can offer a shortcut to open LSPosed after installing a detected module.
+
+## OEM-Specific Information
+
+On supported OPPO / OnePlus devices, InstallerX can show OEM-specific metadata in the install dialog to help explain restrictions or special prompts used by the stock installer.
 
 ### Preset Installation Sources
 You can preset some frequently used installation sources (app package names). This allows for quick selection when creating a profile for an app or in the installation dialog, simplifying the workflow.
 
 ### Blacklist
 The blacklist can be used to block the installation of specific applications. You can add rules based on the app's **package name** or **shared UID**. Any application matching a blacklist rule will be intercepted and cannot be installed.
+
+Shared UID blacklist rules can include exempted packages. If Smart Suggestions are enabled, some blacklist hits can be allowed once for the current install session.
+
+### Default Installer
+Default installer actions have moved to the home page status card. Tap the default installer status card on the home page to open the **Default Installer** page, where you can lock or clear InstallerX's default installer role and enable **Auto Lock Installer**. If you use an LSPosed module to force installer routing, enable the corresponding switch so the home page shows InstallerX as active.
 
 ---
 
@@ -61,14 +78,13 @@ The blacklist can be used to block the installation of specific applications. Yo
 Configure options related to app uninstallation.
 
 ### Authorizer Note
-The uninstaller always uses the **Global Authorizer** you set in the "Installation Options" to perform uninstall operations, ensuring it has the necessary permissions.
+The uninstaller always uses the authorizer from the default profile.
 
 ### Uninstall Options
 *   **Keep App Data**: Uninstalls the app but keeps its data and cache files.
-*   **Downgrade Installation (Keep Data)**: Downgrades the app to an older version while preserving user data.
-*   **Freeze/Unfreeze App**: Temporarily disables or re-enables an app instead of completely uninstalling it.
-
-**Note**: "Downgrade Installation" and "Freeze/Unfreeze App" are mutually exclusive because they are two different operations that cannot be performed simultaneously.
+*   **Uninstall For All Users**: Removes the app for every Android user on the device.
+*   **Delete System App**: Allows uninstalling a system app for the current user where the ROM permits it.
+*   **Biometric Authentication**: Require device authentication before uninstalling.
 
 ### Non-Root Shortcut
-For non-root users, system limitations prevent locking the system uninstaller like root users can. Therefore, InstallerX provides a convenient shortcut: you can simply enter the target app's package name to quickly invoke the system's uninstall process.
+You can manually call InstallerX's uninstaller by entering a target package name. This is useful when the system does not route uninstall intents to InstallerX directly.

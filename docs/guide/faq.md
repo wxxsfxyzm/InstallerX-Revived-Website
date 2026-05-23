@@ -7,12 +7,15 @@ description: Common questions and answers about InstallerX Revived installation 
 
 ::: info 📝 Before Reporting Issues
 Please read the FAQ below before reporting bugs.
-When submitting feedback, please include:
+Please reproduce and report issues with the latest **Alpha/CI** build whenever possible, because problems in the Stable build may already be fixed.
+
+Alpha/CI builds can export logs from **Settings -> About**. Please attach that exported log and include:
+
 * **Device Brand & Model**
 * **System Version** (Android version & ROM version)
 * **App Version**
 * **Authorization Method** (Shizuku, Dhizuku, or Root)
-* **Logs** (captured via logcat or LogFox) if possible.
+* **Steps to reproduce**
 :::
 
 ## Dhizuku is not working?
@@ -34,11 +37,11 @@ When submitting feedback, please include:
     * **HyperOS:** Recommend `com.android.fileexplorer` or `com.android.vending`.
     * **Vivo:** Recommend the Vivo App Store package name.
 * **Shizuku/Root** works fine; **Dhizuku** does not support this.
-* On HyperOS, InstallerX automatically adds a config for `com.miui.packageinstaller` on startup. You can change this in Settings.
+* On HyperOS, InstallerX automatically adds a config for `com.android.shell` on startup. You can change this in Settings.
 * If **Smart Suggestions** is enabled, you can click the suggested option to bypass this restriction upon failure.
 
 ## HyperOS: Installer lock reverts to default automatically?
-* Try enabling **"Auto Lock Installer"** in Settings.
+* Tap the default installer status card on the home page and enable **"Auto Lock Installer"** on the **Default Installer** page.
 * On some HyperOS versions, locking is simply not possible due to system constraints.
 * HyperOS intercepts USB installation requests (ADB/Shizuku) via a dialog. If you click "Deny" when installing a new app, the system might revoke the installer preference and force it back to default. If this happens, please re-lock it.
 
@@ -56,6 +59,6 @@ When submitting feedback, please include:
 2. Open the ZIP file using InstallerX (via file manager "Open with" or "Share to").
 
 ## How to replace the System Package Manager?
-* **ColorOS:** Change the package name to `com.android.packageinstaller` and flash it as a Magisk module.
-* **AOSP / Near-AOSP:** Besides changing the package name, you must add permissions to `/system/etc/permissions/privapp-permissions-platform.xml`. See [this issue comment](https://github.com/wxxsfxyzm/InstallerX-Revived/issues/349#issuecomment-3621922034).
-* **Note:** When running as the system package manager, custom settings (like specific installation sources) may **NOT be supported**.
+This is a high-risk operation. The full guide lives in **[System Integration: System Package Manager Mode](/guide/system-integration#system-package-manager-mode)**.
+
+In short: you can either overwrite the APK after Core Patch or flash a module. Before flashing, verify that the system package manager package name, mount path, and permission files match the build you choose.

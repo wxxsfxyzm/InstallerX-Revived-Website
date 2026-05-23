@@ -5,7 +5,7 @@ description: Get started with InstallerX Revived in minutes. Learn basic setup a
 
 # Getting Started
 
-Welcome to InstallerX Revived! The app is designed to be "out-of-the-box," meaning complex setup is optional. However, understanding the core concepts of **Profiles** and **Settings** will help you unlock its full potential.
+Welcome to InstallerX Revived! The app is designed to be "out-of-the-box," meaning complex setup is optional. However, understanding the core concepts of **Home**, **Profiles**, and **Settings** will help you unlock its full potential.
 
 ## 1. First Run & Permissions
 
@@ -15,22 +15,25 @@ Upon your first installation, you generally do not need to configure complex set
 * **All Files Access:** Required to read/delete APK/APKS/XAPK/APKM files from your storage.
 * **Authorization (Shizuku/Root):** Required to perform silent or privileged installations.
 
-## 2. Core Concepts: Profiles vs. Settings
+## 2. Core Concepts: Home, Profiles, and Settings
 
-InstallerX Revived separates logic into two distinct tabs:
+InstallerX Revived organizes its main features into three tabs:
 
-* **Profiles:** Controls *how* an app is installed (e.g., installation mode, install flags, user selection).
-* **Settings:** Controls global app behavior (e.g., UI themes, auto-lock installer, global authorization method).
+* **Home:** Shows the default installer status, authorization/privilege status, profile count, and device information. Default installer actions also open from the Home status card.
+* **Profiles:** Controls how install or uninstall requests are handled (e.g., installation mode, install flags, user selection, authorizer overrides).
+* **Settings:** Controls global app preferences (e.g., UI themes, dialog and notification behavior, blacklist, laboratory).
 
 ### Authorization Method
-By default, the app uses **Shizuku**. You can change the global authorization mode in **Settings**:
-* **Root:** For devices with Magisk/KernelSU/APatch.
-* **Shizuku:** Recommended for most users. Even for Root users, Shizuku is preferred as it generally offers better performance.
-* **Dhizuku:** Device owner mode (limited functionality but useful for specific devices).
-* **None:** Invokes the system package manager for manual confirmation (only available on supported devices).
+By default, the app uses **Shizuku**. The authorization page on Home detects every authorization method available to InstallerX and lets you choose the global authorizer used across the whole app for privileged operations, such as locking the installer, installing apps, flashing modules, deleting files, or changing system-level settings. This page only checks availability; any required permission is requested when the app actually needs it. The features shown in the app can also change based on your selection.
+
+Available authorizers include:
+* **Root:** Can perform every privileged operation with the highest permission level, but performance is usually slightly worse because it has to cold-start `app_process`.
+* **Shizuku:** Provides shell or root-level privileges depending on how Shizuku was started. Recommended for most users and usually faster than direct root access.
+* **Dhizuku:** Device owner mode backed by DevicePolicyManager APIs. It can handle some operations such as locking the installer and installing apps, but is limited for other privileged tasks.
+* **None:** Fully limited by the system. When InstallerX runs as the system installer, it can perform silent app installs; as a normal user app, it uses the system install session and the system package manager asks the user to confirm.
 
 ::: tip Profile Override
-Profiles default to following the global authorization setting, but you can also set a specific profile to use a different authorization method independently (e.g., Global is Shizuku, but a specific profile uses Root).
+The authorizer selected on Home controls how InstallerX itself performs privileged operations. The authorizer inside a profile is used for app installation, follows the Home authorizer by default, and can be overridden per profile (e.g., global is Shizuku, but a specific profile uses Root).
 :::
 
 ## 3. Profiles & Scopes (Per-Source Configuration)
@@ -62,6 +65,7 @@ For devices running **Android 16+**, InstallerX Revived supports the new **Live 
 * OneUI 8.0+
 * AOSP 16 QPR1+
 * Pixel 16 QPR1+
+* HyperOS 3.0.300+
 
 ## 5. Locking the Installer
 
@@ -74,10 +78,10 @@ Due to strict restrictions and heavy modifications in Chinese custom ROMs, the b
 
 ::: info Xiaomi / HyperOS Users
 **1. Installer Masquerading:**
-Installing system apps on HyperOS requires the "Installer" itself to be recognized as a system app. By default, InstallerX Revived automatically sets the **Installer Package Name** to `com.miui.packageinstaller` to ensure compatibility. You do not need to change this unless you are an advanced user.
+Installing system apps on HyperOS requires the "Installer" itself to be recognized as a system app. By default, InstallerX Revived automatically sets the **Installer Package Name** to `com.android.shell` to ensure compatibility. You do not need to change this unless you are an advanced user.
 
 **2. Auto Lock:**
-If you find that the installer lock reverts to the system default after an installation, try enabling the **"Auto Lock Installer"** toggle in Settings.
+If you find that the installer lock reverts to the system default after an installation, tap the default installer status card on the home page and enable **"Auto Lock Installer"** on the **Default Installer** page.
 :::
 
 ::: tip Global / Non-CN Users

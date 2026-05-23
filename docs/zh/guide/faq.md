@@ -2,12 +2,14 @@
 
 ::: info 📝 反馈问题须知
 在反馈问题之前请先阅读下方常见问题。
-反馈时请详细说明：
+请务必使用最新 **Alpha/CI** 版本复现并提交反馈，因为 Stable 版本中的问题可能已经被修复。
+
+Alpha/CI 版本可在 **设置 -> 关于** 中导出日志。反馈时请带上这份日志，并同时说明：
 * **手机品牌与型号**
 * **系统版本** (Android 版本 & ROM 版本)
 * **软件版本**
 * **授权方式** (Shizuku, Dhizuku 或 Root)
-* **日志** (如果可能，请使用 logcat 或 LogFox 抓取)
+* **复现步骤**
 :::
 
 ## Dhizuku 无法使用怎么办？
@@ -29,11 +31,11 @@
     * **HyperOS:** 推荐 `com.android.fileexplorer` 或 `com.android.vending`。
     * **Vivo:** 推荐 Vivo 应用商店的包名。
 * **Shizuku/Root** 模式下有效；**Dhizuku** 不支持此功能。
-* 本应用在 HyperOS 上启动时会自动添加配置（默认为 `com.miui.packageinstaller`），如果需要更改请在设置中修改。
+* 本应用在 HyperOS 上启动时会自动添加配置（默认为 `com.android.shell`），如果需要更改请在设置中修改。
 * 如果开启了 **智能建议**，可以在失败时点击建议选项来绕过此限制继续安装。
 
 ## HyperOS 无法锁定安装器 / 锁定失效变回默认？
-* 请尝试打开设置中的 **“自动锁定安装器”** 功能。
+* 请在首页点击默认安装器状态卡，并在 **默认安装器** 页面开启 **“自动锁定安装器”** 功能。
 * 某些 HyperOS 版本受系统限制确实无法锁定，这是正常的。
 * HyperOS 会以对话框形式拦截 USB 安装请求 (ADB/Shizuku)。若用户在全新安装一款应用时点击“拒绝”，系统可能会撤销其安装器设定并强行改回默认安装器。若出现这种情况请重新锁定。
 
@@ -51,6 +53,6 @@
 2. 使用 InstallerX 打开 ZIP 压缩包（通过文件管理器“打开方式”或“分享”）。
 
 ## 如何替换系统包管理器？
-* **ColorOS:** 请修改包名为 `com.android.packageinstaller` 并制作成模块刷入。
-* **原生 / 类原生 (AOSP):** 除了修改包名，还需要在 `/system/etc/permissions/privapp-permissions-platform.xml` 中补上权限。参考[这个 Issue 评论](https://github.com/wxxsfxyzm/InstallerX-Revived/issues/349#issuecomment-3621922034)。
-* **注意:** 作为系统包管理器工作时，**不支持**自定义部分设置（例如指定安装来源）。
+这是高风险操作，完整说明统一放在 **[系统集成：系统包管理器模式](/zh/guide/system-integration#系统包管理器模式)**。
+
+简要原则：可以在核心破解后覆盖安装 APK，也可以刷入模块；刷入前必须确认系统包管理器的包名、挂载路径和权限文件与所选包完全匹配。

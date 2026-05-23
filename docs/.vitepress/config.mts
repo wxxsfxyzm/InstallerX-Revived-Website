@@ -130,8 +130,8 @@ export default defineConfig({
             items: [
               { text: 'Profiles & Scopes', link: '/guide/profiles' },
               { text: 'System Integration', link: '/guide/system-integration' },
-              { text: 'Laboratory', link: '/guide/laboratory' },
-              { text: 'App Settings', link: '/guide/app-settings' }
+              { text: 'App Settings', link: '/guide/app-settings' },
+              { text: 'Laboratory', link: '/guide/laboratory' }
             ]
           },
           {
@@ -198,18 +198,18 @@ export default defineConfig({
             text: '高级功能',
             items: [
               { text: '用户配置文件', link: '/zh/guide/profiles' },
-              // { text: '应用设置', link: '/zh/guide/app-settings' },
-              // { text: '实验室', link: '/zh/guide/laboratory' },
-              // { text: '系统集成', link: '/zh/guide/system-integration' }
+              { text: '系统集成', link: '/zh/guide/system-integration' },
+              { text: '应用设置', link: '/zh/guide/app-settings' },
+              { text: '实验室', link: '/zh/guide/laboratory' }
             ]
           },
-          // {
-          //   text: '安装选项',
-          //   items: [
-          //     { text: '参数设定', link: '/zh/guide/install-options' },
-          //     { text: '异常处理', link: '/zh/guide/exceptions' }
-          //   ]
-          // },
+          {
+            text: '安装选项',
+            items: [
+              { text: '参数设定', link: '/zh/guide/install-options' },
+              { text: '异常处理', link: '/zh/guide/exceptions' }
+            ]
+          },
           {
             text: '支持',
             items: [

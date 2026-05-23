@@ -20,7 +20,7 @@ Unlike stock installers that often struggle with complex formats, InstallerX Rev
 InstallerX Revived prioritizes stability and security. It avoids using fragile shell commands for standard operations, relying instead on **Native Android APIs**. It includes built-in signature verification to prevent tampering and offers a detailed permission viewer before installation. For users with **Shizuku** or **Root** access, it can perform silent installations and bypass system restrictions (such as interception by custom OS UIs).
 
 ### Modern Aesthetics
-The app is designed to look and feel like a native part of modern Android. You can switch between a **Material 3 Expressive** design or a **Miuix** (HyperOS-like) interface. It fully supports dark mode, dynamic colors, and can even display system icon packs during the installation dialog or notifications.
+The app is designed to look and feel like a native part of modern Android. You can switch between a **Material 3 Expressive** design or a **Miuix** (HyperOS-like) interface. It fully supports dark mode, dynamic colors, advanced palettes, and can even display system icon packs during the installation dialog or notifications. InstallerX Revived also works to follow Android best practices and continuously improve performance.
 
 ### Advanced Power Tools
 For enthusiasts, InstallerX Revived offers features not found in standard installers:
@@ -33,7 +33,7 @@ For enthusiasts, InstallerX Revived offers features not found in standard instal
 
 ## Supported Versions
 
-* **Full Support:** Android 14 - Android 16 (SDK 34 - 36.1)
+* **Full Support:** Android 14 - Android 17 (SDK 34 - 37.0)
 * **Limited Support:** Android 8.0 - Android 13 (SDK 26 - 33)
 
 ## How to use InstallerX Revived?

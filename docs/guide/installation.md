@@ -11,7 +11,7 @@ InstallerX Revived is designed for modern Android systems but maintains backward
 
 | Android Version | SDK Level | Support Status | Note |
 | :--- | :--- | :--- | :--- |
-| **Android 14 - 16** | 34 - 36.1 | ✅ **Full Support** | Recommended for best experience. |
+| **Android 14 - 17** | 34 - 37.0 | ✅ **Full Support** | Recommended for best experience. |
 | **Android 8.0 - 13** | 26 - 33 | ⚠️ **Limited Support** | Functionality may be limited. Please report issues if encountered. |
 
 ---

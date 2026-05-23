@@ -11,4 +11,4 @@ Disallow: /node_modules/
 Crawl-delay: 1
 
 # Specify sitemap location
-Sitemap: https://wxxsfxyzm.github.io/InstallerX-Revived/sitemap.xml
+Sitemap: https://wxxsfxyzm.github.io/InstallerX-Revived-Website/sitemap.xml
