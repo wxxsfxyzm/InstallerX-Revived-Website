@@ -52,7 +52,7 @@ InstallerX 可以作为普通应用、锁定后的默认安装器，或高级用
 以上只是适用于多数情况的参考，不保证适用于所有 OEM。刷入、打包或内置前，请再次核查自己系统包管理器的包名、系统挂载路径和权限文件是否完全匹配，否则可能卡在第二屏或无法进入系统。
 :::
 
-如果你使用 **KernelSU**，请优先刷入元模块，并关闭 KernelSU 的默认卸载模块功能，避免模块卸载逻辑和系统包管理器替换互相影响。
+如果你使用 [KernelSU v3.0.0 或更高版本](https://github.com/tiann/KernelSU/releases/tag/v3.0.0)，请先刷入[元模块](https://kernelsu.org/guide/metamodule.html)以处理模块挂载。无论使用哪个 KernelSU 版本，都请关闭 KernelSU 的 [“Umount modules by default”](https://kernelsu.org/guide/app-profile.html) 选项，避免模块卸载逻辑与系统包管理器替换互相冲突。
 
 如果你已经通过模块完成过系统化安装，后续更新通常只需要安装模块内的 APK 即可获得应用更新，不需要每次都重新刷入模块并重启。
 

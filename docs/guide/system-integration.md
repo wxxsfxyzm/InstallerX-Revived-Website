@@ -52,7 +52,7 @@ General guidance:
 This is only a reference for common setups, not a guarantee for every OEM. Before flashing, packaging, or preinstalling it, verify that your system package manager package name, mount path, and privileged permission files match exactly. A mismatch can cause boot issues.
 :::
 
-If you use **KernelSU**, prefer the meta-module package and disable KernelSU's default module uninstall feature so module removal behavior does not conflict with replacing the system package manager.
+If you use [KernelSU v3.0.0 or later](https://github.com/tiann/KernelSU/releases/tag/v3.0.0), install a [metamodule](https://kernelsu.org/guide/metamodule.html) to handle module mounting. For all KernelSU versions, disable KernelSU’s [“Umount modules by default”](https://kernelsu.org/guide/app-profile.html) option to avoid conflicts when replacing the system package manager.
 
 After you have already installed InstallerX through a system-app module once, later updates usually only require installing the APK inside the module. You do not need to flash the module and reboot for every app update.
 
