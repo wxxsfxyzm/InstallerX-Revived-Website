@@ -18,7 +18,7 @@
   "license": "GPL-3.0",
   "description": "InstallerX Revived documentation",
   "devDependencies": {
-    "@types/node": "^25.9.1",
+    "@types/node": "^25.9.2",
     "vitepress": "^1.6.4",
     "vue": "^3.5.35"
   },
