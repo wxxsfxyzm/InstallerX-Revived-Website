@@ -55,7 +55,8 @@ AOSP reference: install failures mostly map to `INSTALL_FAILED_*` constants in [
 
 * **Module install failed:** verify the module ZIP and selected root implementation. Check the exit code and module installer output.
 * **Incompatible authorizer:** module flashing requires a supported privileged path.
-* **HTTP not allowed:** the current HTTP policy blocks cleartext HTTP. Use HTTPS or change the Laboratory HTTP policy.
+* **HTTP not allowed:** the current HTTP policy blocks cleartext HTTP. Use HTTPS or change the HTTP policy in Network settings.
+* **Network access disabled:** enable Allow Internet access in Network settings for updates or network package downloads.
 * **HTTP restricted for localhost:** cleartext HTTP is limited to local addresses.
 * **ZIP exception:** the archive is unreadable or malformed. Re-download or extract it with another tool to verify it.
 

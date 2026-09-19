@@ -72,7 +72,7 @@ For devices running **Android 16+**, InstallerX Revived supports the new **Live 
 Due to strict restrictions and heavy modifications in Chinese custom ROMs, the built-in "Lock as Default Installer" feature may fail on some devices.
 
 * **Compatibility Warning:** This feature may fail on **some HyperOS versions**, and **all ColorOS and OriginOS versions**.
-* **Solution:** In these cases, please use the LSPosed module **[InxLocker](https://github.com/Chimioo/InxLocker)** to lock the installer for the best experience.
+* **Solution:** In these cases, please use the Xposed module **[InxLocker](https://github.com/Chimioo/InxLocker)** to lock the installer for the best experience.
 
 ## 6. Tips & Device-Specific Notes
 
@@ -80,8 +80,7 @@ Due to strict restrictions and heavy modifications in Chinese custom ROMs, the b
 **1. Installer Masquerading:**
 Installing system apps on HyperOS requires the "Installer" itself to be recognized as a system app. By default, InstallerX Revived automatically sets the **Installer Package Name** to `com.android.shell` to ensure compatibility. You do not need to change this unless you are an advanced user.
 
-**2. Auto Lock:**
-If you find that the installer lock reverts to the system default after an installation, tap the default installer status card on the home page and enable **"Auto Lock Installer"** on the **Default Installer** page.
+**2. Default installer:** If the lock reverts to the system default, tap the default installer status card and run the manual lock action again. Automatic locking is no longer available.
 :::
 
 ::: tip Global / Non-CN Users

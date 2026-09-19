@@ -25,32 +25,22 @@ When module flashing is enabled, select the root implementation that matches you
 * **KernelSU**
 * **APatch**
 
+InstallerX can detect installed Magisk, KernelSU, and APatch modules and compare versions when installing a new module.
+
 InstallerX can also show an InstallerX ASCII art banner when module installation starts. The option to always use root for privileged tasks while running as a system installer has moved to **Settings -> Installer Settings -> Authorizer Tweaks**.
 
 ## HTTP Safety
 
-Online builds can install APKs from shared download links and check for updates. The HTTP security policy in Laboratory controls whether cleartext links are allowed:
-
-* **HTTPS only:** safest default.
-* **Local cleartext:** allow cleartext HTTP only for local or localhost use.
-* **Allow all:** least safe; only use when you trust the source and network.
-
-::: warning
-Allowing all cleartext HTTP lowers security. Use it only when you fully trust the source and the current network.
-:::
-
-Network-related settings only appear in online builds. Offline builds do not request network permission and will report an error for online-only features.
+See [Network settings](./app-settings.md#http-safety) for HTTP policy controls.
 
 ## GitHub Update Channel
 
-Online builds can choose the GitHub update channel:
-
-* **Official:** access GitHub directly.
-* **7ED proxy:** use the built-in proxy channel.
-* **Custom GHProxy:** enter your own proxy URL.
-
-If the custom proxy URL is empty, InstallerX falls back to the official channel.
+Choose a channel in [Network settings](./app-settings.md#github-update-channel).
 
 ## Practical Advice
 
 Keep Laboratory settings close to defaults for daily use. Turn on one feature at a time, test with a safe APK or trusted module, and turn it off again if your ROM starts routing installs through the stock installer, install sessions fail before confirmation, or network downloads are blocked unexpectedly.
+
+## Smart Authorization
+
+Disabled by default. When the profile authorizer is unavailable, try enabled fallback authorizers in order. Select and drag candidates to reorder them, keeping at least one enabled. None is offered only where system session installation is supported.

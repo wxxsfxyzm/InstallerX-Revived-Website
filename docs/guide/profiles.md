@@ -9,7 +9,7 @@ Profiles decide how InstallerX handles an install request. You can use the globa
 
 ## Scope
 
-The first profile is the default profile. It applies whenever no scoped profile matches the app that started the install request. Uninstall operations also always use the authorizer and related uninstall settings from the default profile.
+The first profile is the default profile. It applies whenever no scoped profile matches the app that started the install request. The scope list can show an **Unknown scope** for requests whose initiator cannot be identified. Uninstall operations also always use the authorizer and related uninstall settings from the default profile.
 
 Create additional profiles when you want per-source rules. For example, you can let an app store install in the background while keeping file manager installs in a confirmation dialog.
 
@@ -23,6 +23,8 @@ The authorizer is the privilege backend used to install apps and perform privile
 * **Dhizuku:** Limited by DevicePolicyManager APIs. Useful on some devices, but it cannot set installer package names, package sources, target users, or DexOpt.
 * **None:** Fully limited by the system. In system installer mode it can install silently; as a normal user app it uses a system install session and relies on user confirmation.
 * **Custom:** Run a custom command for advanced environments.
+
+With Smart authorization enabled, unavailable selected authorizers are tried in order from the enabled fallback list; keep at least one candidate enabled.
 
 ::: info System package manager mode
 When InstallerX is installed as a system package manager, many profile options are handled by the system and may not behave like Shizuku or Root mode.
@@ -38,11 +40,11 @@ Profiles can choose how an install is presented:
 * **Notification Auto:** Run from notification with less interaction.
 * **Ignore:** Block install requests matched by this profile.
 
-Profiles can configure Toast behavior. It can be disabled, always enabled, or limited to cases where the dialog is not visible.
+Profiles also offer **Auto-approve session installs**, disabled by default and intended only for trusted sources. Profiles can configure Toast behavior. It can be disabled, always enabled, or limited to cases where the dialog is not visible.
 
 ## Installer Settings
 
-These settings change metadata and follow-up behavior for matching installs.
+Profile signature policies are **Block Signature Mismatch** and **Block Unknown Signature**. Streamed sources cannot provide full signature verification. These settings change metadata and follow-up behavior for matching installs.
 
 * **Install reason:** Tell Android why the package is being installed. The User reason may make launchers create a home-screen icon for new apps.
 * **Package source:** Mark the package as coming from a store, local file, downloaded file, other source, or unspecified source. Android may apply extra restrictions to local or downloaded files.

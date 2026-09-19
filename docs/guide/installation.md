@@ -7,6 +7,10 @@ description: Step-by-step installation guide for InstallerX Revived Android APK 
 
 ## Supported Versions
 
+::: warning Android 8.0 / 8.1 support
+26.09 will be the last version to support Android 8.0 and 8.1. Subsequent versions will require Android 9 or later.
+:::
+
 InstallerX Revived is designed for modern Android systems but maintains backward compatibility.
 
 | Android Version | SDK Level | Support Status | Note |
@@ -16,17 +20,9 @@ InstallerX Revived is designed for modern Android systems but maintains backward
 
 ---
 
-## Variants (Online vs Offline)
+## Package and network access
 
-To respect user privacy and diverse needs, we release two variants for every version.
-**Note:** Both versions share the same package name, version number, and signature. You can switch between them without uninstalling (dirty flash).
-
-| Variant | Network Permission | Description |
-| :--- | :--- | :--- |
-| **Online** | ✅ Yes | Supports **online self-updates** (v2.3.1+) and installing APKs via shared download links. <br>Network permission is **strictly** used for installation tasks only. |
-| **Offline** | 🚫 No | A pure local installer. It requests **zero** network permissions. <br>Online features will show an error if accessed. |
-
----
+InstallerX is published as a single APK. Network access is controlled in the app settings; see [Recent Updates](./recent-updates.md) for streaming modes and signature limitations.
 
 ## Release Channels
 

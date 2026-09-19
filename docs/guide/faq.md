@@ -24,7 +24,7 @@ Alpha/CI builds can export logs from **Settings -> About**. Please attach that e
 * Dhizuku has limited permissions compared to Shizuku. It cannot perform advanced operations like bypassing system intent interception or specifying installation sources. We recommend using **Shizuku** if possible.
 
 ## Cannot lock the installer?
-* Some systems strictly restrict 3rd-party installers. You need to use an **LSPosed module** to intercept the intent and forward it to InstallerX.
+* Some systems strictly restrict 3rd-party installers. You need to use an **Xposed module** to intercept the intent and forward it to InstallerX.
 * We recommend using it with **[InxLocker](https://github.com/Chimioo/InxLocker)** for the best experience.
 * Other locker modules are no longer recommended.
 
@@ -41,7 +41,7 @@ Alpha/CI builds can export logs from **Settings -> About**. Please attach that e
 * If **Smart Suggestions** is enabled, you can click the suggested option to bypass this restriction upon failure.
 
 ## HyperOS: Installer lock reverts to default automatically?
-* Tap the default installer status card on the home page and enable **"Auto Lock Installer"** on the **Default Installer** page.
+* Tap the default installer status card on the home page and run the manual lock action. Automatic locking is no longer available.
 * On some HyperOS versions, locking is simply not possible due to system constraints.
 * HyperOS intercepts USB installation requests (ADB/Shizuku) via a dialog. If you click "Deny" when installing a new app, the system might revoke the installer preference and force it back to default. If this happens, please re-lock it.
 

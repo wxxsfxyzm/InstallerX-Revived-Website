@@ -13,19 +13,18 @@ Locking InstallerX as the default package installer lets it receive most APK ins
 
 Tap the default installer status card on the home page to open the **Default Installer** page. This page includes:
 
-* **Auto Lock Installer:** Attempt to set InstallerX as the default installer when an install starts.
 * **Lock as Default Installer:** Manually run the lock action.
 * **Clear Default Installer Lock:** Clear the lock, preferably with the same authorizer used to lock it.
-* **LSPosed Module Enabled:** If a third-party LSPosed module already forces installer routing, enable this to disable in-app status detection.
+* **Xposed Module Enabled:** If a third-party Xposed module already forces installer routing, enable this to disable in-app status detection.
 * **InxLocker link:** The page links to the recommended locker module for ROMs that restrict direct takeover.
 
 Some requests cannot be captured directly, especially when the source app uses an explicit component, a session install flow, or an OEM-controlled installer.
 
-## LSPosed and InxLocker
+## Xposed and InxLocker
 
-Some ROMs prevent third-party installers from becoming the real default installer. In those cases, use an LSPosed module to intercept install intents and forward them to InstallerX.
+Some ROMs prevent third-party installers from becoming the real default installer. In those cases, use an Xposed module to intercept install intents and forward them to InstallerX.
 
-[InxLocker](https://github.com/Chimioo/InxLocker) is the recommended companion module. If you already use an LSPosed locker, enable the LSPosed module switch in InstallerX so the home page activation status reflects that setup instead of relying only on built-in detection.
+[InxLocker](https://github.com/Chimioo/InxLocker) is the recommended companion module. If you already use an Xposed locker, enable the Xposed module switch in InstallerX so the home page activation status reflects that setup instead of relying only on built-in detection.
 
 ## System Package Manager Mode
 

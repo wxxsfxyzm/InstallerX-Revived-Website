@@ -13,19 +13,18 @@ InstallerX 可以作为普通应用、锁定后的默认安装器，或高级用
 
 在首页点击默认安装器状态卡后，可以进入 **默认安装器** 页面。该页面包含：
 
-* **自动锁定安装器：** 在开始安装时自动尝试将 InstallerX 设置为默认安装器。
 * **锁定为默认安装器：** 手动执行锁定操作。
 * **清除锁定默认安装器：** 清除默认安装器锁定。清除时建议使用与锁定时相同的授权器。
-* **已启用 LSPosed 模块：** 如果已经通过第三方 LSPosed 模块强制接管默认安装器，可以开启此项停用应用内状态检测。
+* **已启用 Xposed 模块：** 如果已经通过第三方 Xposed 模块强制接管默认安装器，可以开启此项停用应用内状态检测。
 * **InxLocker 入口：** 页面提供推荐锁定器模块的链接，便于在受限 ROM 上完成接管。
 
 部分请求无法直接接管，例如发起方指定了具体组件、使用安装会话，或被 OEM 安装器强制接管。
 
-## LSPosed 与 InxLocker
+## Xposed 与 InxLocker
 
-部分 ROM 不允许第三方应用真正成为默认安装器。这种情况下，需要 LSPosed 模块拦截安装 intent 并转发给 InstallerX。
+部分 ROM 不允许第三方应用真正成为默认安装器。这种情况下，需要 Xposed 模块拦截安装 intent 并转发给 InstallerX。
 
-推荐使用 [InxLocker](https://github.com/Chimioo/InxLocker)。如果你已经通过 LSPosed 模块接管安装器，可以在 InstallerX 中开启对应开关，让首页激活状态按模块接管结果显示。
+推荐使用 [InxLocker](https://github.com/Chimioo/InxLocker)。如果你已经通过 Xposed 模块接管安装器，可以在 InstallerX 中开启对应开关，让首页激活状态按模块接管结果显示。
 
 ## 系统包管理器模式
 

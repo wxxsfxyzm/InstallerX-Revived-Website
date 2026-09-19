@@ -55,15 +55,19 @@ For APKS, APKM, and XAPK files, the default best-fit behavior is usually safer b
 
 When Core Patch or similar system-level hooks are enabled, Android may no longer block installs with mismatched or unverifiable signatures. That means an app store using InstallerX could silently replace an app with a differently signed build, such as auto-updating a development build to an official release.
 
-To prevent that, each profile has two policy gates:
+Each profile offers two blocking policies:
 
-* **Allow Signature Mismatch:** allow updates where the new APK's signature differs from the currently installed version.
-* **Allow Unknown Signature:** allow installs where InstallerX cannot verify the signature.
+* **Block Signature Mismatch:** block updates signed differently from the installed version.
+* **Block Unknown Signature:** block installs whose signature cannot be verified.
 
-Both options are off by default. When disabled and the matching risk is detected, InstallerX blocks the request before it reaches the system, shows a profile-blocked install failure, and reports a standard install failure to the calling app. The failure dialog can show a suggestion chip for a one-time bypass.
+Both blocks are disabled for new profiles. When enabled, a matching risk stops the request before it reaches Android and reports failure to the caller. The failure dialog may offer a one-time bypass. Review existing profiles after upgrading or restoring settings.
 
-::: danger
-These options are mainly for special environments using Core Patch or similar framework-level changes. Without Core Patch, the system usually rejects these installs already. Enabling them allows bypassing normal update safety checks, so use them only for trusted sources.
+Control analysis under **Settings → Installer settings → Signature checks**. App signature analysis is enabled by default; split package signature analysis is disabled by default.
+
+::: warning Streaming installs
+Streaming cannot perform full APK signature verification. Block Signature Mismatch cannot take effect on this path; different certificates or uncertain compatibility follow Block Unknown Signature. Choose Full download in Network settings when full analysis is required.
 :::
+
+Disabling an app-level block does not bypass Android's final signature verification. When using Core Patch or similar changes to system verification, check package sources and signature details carefully.
 
 [aosp-pm]: https://cs.android.com/android/platform/superproject/+/android-latest-release:frameworks/base/core/java/android/content/pm/PackageManager.java

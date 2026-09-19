@@ -118,6 +118,10 @@ export default defineConfig({
         // 英文侧边栏
         sidebar: [
           {
+            text: 'Recent Updates',
+            items: [{ text: '26.09 Highlights', link: '/guide/recent-updates' }]
+          },
+          {
             text: 'User Guide',
             items: [
               { text: 'What is InstallerX Revived?', link: '/guide/intro' },
@@ -186,6 +190,10 @@ export default defineConfig({
 
         // 中文侧边栏 (链接路径都要加 /zh/ 前缀)
         sidebar: [
+          {
+            text: '近期更新',
+            items: [{ text: '26.09 主要变化', link: '/zh/guide/recent-updates' }]
+          },
           {
             text: '用户指南',
             items: [

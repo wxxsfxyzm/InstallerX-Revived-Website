@@ -69,7 +69,7 @@ The blacklist can be used to block the installation of specific applications. Yo
 Shared UID blacklist rules can include exempted packages. If Smart Suggestions are enabled, some blacklist hits can be allowed once for the current install session.
 
 ### Default Installer
-Default installer actions have moved to the home page status card. Tap the default installer status card on the home page to open the **Default Installer** page, where you can lock or clear InstallerX's default installer role and enable **Auto Lock Installer**. If you use an LSPosed module to force installer routing, enable the corresponding switch so the home page shows InstallerX as active.
+Default installer actions have moved to the home page status card. Tap the default installer status card on the home page to open the **Default Installer** page, where you can lock or clear InstallerX's default installer role. If you use an Xposed module to force installer routing, enable **Xposed Module Enabled** so the home page shows InstallerX as active; this is a manual declaration and does not verify the module.
 
 ---
 
@@ -88,3 +88,39 @@ The uninstaller always uses the authorizer from the default profile.
 
 ### Non-Root Shortcut
 You can manually call InstallerX's uninstaller by entering a target package name. This is useful when the system does not route uninstall intents to InstallerX directly.
+
+## Network Settings
+
+The unified APK uses **Allow Internet access** to control update checks and network package downloads. Network source handling offers **Full download** (default), **Smart**, and **Low storage**. Low storage streaming requires Android 9+, HTTP Range support, and a strong ETag; streamed sources cannot receive full APK signature analysis.
+
+## Signature Checks
+
+App signature analysis is enabled by default. Split package analysis is optional and can increase analysis time. The install dialog can show signature details, including certificate summaries, verified schemes, warnings, and errors.
+
+## History and Backup
+
+History records installation, uninstallation, and session confirmation results, retaining up to 100 records. You can enable or disable recording, keep or clear existing records when disabling it, and control indicators separately. Backup and Restore exports profiles, scopes, settings, and history; restoring replaces current data after validation rather than merging it.
+
+## HTTP Safety
+
+When Internet access is enabled, InstallerX can install APKs from shared download links and check for updates. The HTTP security policy in Network settings controls whether cleartext links are allowed:
+
+* **HTTPS only:** safest default.
+* **Local cleartext:** allow cleartext HTTP only for local or localhost use.
+* **Allow all:** least safe; only use when you trust the source and network.
+
+::: warning
+Allowing all cleartext HTTP lowers security. Use it only when you fully trust the source and the current network.
+:::
+
+Network access is controlled in **Settings → Network settings** for the unified APK. Offline use is achieved by disabling Allow Internet access; the APK still declares network permissions.
+
+## GitHub Update Channel
+
+In Network settings, choose a GitHub update channel:
+
+* **Official:** access GitHub directly.
+* **7ED proxy:** use the built-in proxy channel.
+* **Custom GHProxy:** enter your own proxy URL.
+
+If the custom proxy URL is empty, InstallerX falls back to the official channel.
