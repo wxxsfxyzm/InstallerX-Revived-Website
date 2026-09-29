@@ -45,6 +45,7 @@ General guidance:
 
 * **China-region Xiaomi / HyperOS:** enable **Use native installer** in Cemiuiler under **System Framework -> Other**, then flash the AOSP build.
 * **China-region OPPO / OnePlus / ColorOS:** the AOSP build usually matches.
+* **China-region Samsung devices:** the package name is `com.samsung.android.packageinstaller`, usually located at `/system/priv-app/PackageInstaller_CHN`. This differs from the common AOSP and Google builds. This repository does not provide a matching package; you will need to build and package it yourself.
 * **Global ROMs / Google devices:** the Google build usually matches.
 
 ::: danger

@@ -45,6 +45,7 @@ InstallerX 可以作为普通应用、锁定后的默认安装器，或高级用
 
 * **国行小米 / HyperOS：** 可在西米露的 **系统框架 -> 其他** 中开启 **“使用原生安装器”**，再刷入 AOSP 版本。
 * **国行 OPPO / OnePlus / ColorOS：** 通常直接刷入 AOSP 版本。
+* **国行三星设备：** 包名为 `com.samsung.android.packageinstaller`，通常位于 `/system/priv-app/PackageInstaller_CHN`，与常见的 AOSP 和 Google 版本不同。本仓库未提供对应安装包，请自行构建打包。
 * **海外 ROM / Google 系设备：** 通常使用 Google 版本。
 
 ::: danger
